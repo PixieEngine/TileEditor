@@ -1,3 +1,5 @@
+#= require pixie/editor/jquery.live_edit
+
 #= require pixie/editor/tile/templates/layer_selection
 
 namespace "Pixie.Editor.Tile.Views", (Views) ->
@@ -6,7 +8,7 @@ namespace "Pixie.Editor.Tile.Views", (Views) ->
   class Views.LayerSelection extends Pixie.View
     className: 'component layer_selection'
 
-    template: "pixie/editor/tile/layer_selection"
+    template: "layer_selection"
 
     initialize: ->
       super

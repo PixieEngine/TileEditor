@@ -1,3 +1,6 @@
+#= require pixie/editor/jquery.take_class
+#= require pixie/editor/jquery.property_editor
+
 #= require pixie/editor/tile/templates/toolbar
 
 namespace "Pixie.Editor.Tile.Views", (Views) ->
@@ -8,7 +11,7 @@ namespace "Pixie.Editor.Tile.Views", (Views) ->
 
     tagName: "ul"
 
-    template: "pixie/editor/tile/toolbar"
+    template: "toolbar"
 
     initialize: ->
       super

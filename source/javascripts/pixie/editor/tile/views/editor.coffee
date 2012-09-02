@@ -17,7 +17,7 @@ namespace "Pixie.Editor.Tile.Views", (Views) ->
   class Views.Editor extends Pixie.View
     className: 'editor tile_editor'
 
-    template: "pixie/editor/tile/editor"
+    template: "editor"
 
     initialize: ->
       super

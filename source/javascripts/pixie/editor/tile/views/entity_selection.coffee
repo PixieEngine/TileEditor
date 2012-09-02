@@ -8,7 +8,7 @@ namespace "Pixie.Editor.Tile.Views", (Views) ->
   class Views.EntitySelection extends Pixie.View
     className: 'component'
 
-    template: "pixie/editor/tile/entity_selection"
+    template: "entity_selection"
 
     initialize: ->
       super
