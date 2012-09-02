@@ -1,5 +1,8 @@
 #TODO Extract to separate lib
 
+# TODO Update to the latest cornerstone and remove this
+#= require pixie/command_stack
+
 # An editor module for editors that support undo/redo
 namespace "Pixie.Editor", (Editor) ->
 

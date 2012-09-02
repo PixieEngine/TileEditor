@@ -2,7 +2,7 @@
 
 namespace "Pixie.Editor.Tile", (Tile) ->
   {Command, Models} = Tile
-  IMAGE_DIR = '/assets/tools/'
+  IMAGE_DIR = '/images/pixie/editor/tile/tools/'
 
   Tile.tools =
     stamp:
