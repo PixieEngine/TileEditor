@@ -150,9 +150,10 @@ $toolbar_height: 250px
       +user-select(text)
 
     .layer
+      +bounds(100%, 24px)
+
       +inline-block
       cursor: pointer
-      width: 100%
 
       .name
         +inline-block
@@ -174,7 +175,7 @@ $toolbar_height: 250px
         eye
           +inline-block
 
-          background-image: url(/pixie/editor/tile/tools/show.png)
+          background-image: url(/images/pixie/editor/tile/tools/show.png)
           cursor: pointer
           float: right
           height: 16px
@@ -225,8 +226,6 @@ $toolbar_height: 250px
     +tile_tool(selection)
     +tile_tool(stamp)
     +tile_tool(pointer)
-
-    padding-left: 0
 
     .tool
       +bounds(32px)
