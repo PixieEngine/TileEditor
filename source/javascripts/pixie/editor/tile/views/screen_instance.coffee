@@ -11,7 +11,7 @@ namespace "Pixie.Editor.Tile.Views", (Views) ->
 
       @el.append $ "<img>",
         class: "propsIcon"
-        src: '/assets/icons/table.png'
+        src: '/images/pixie/editor/tile/table.png'
 
       @el.attr "data-cid", @model.cid
       @model.bind 'change', @render

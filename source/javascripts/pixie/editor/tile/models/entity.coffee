@@ -14,6 +14,9 @@ namespace "Pixie.Editor.Tile.Models", (Models) ->
         if sprite.lastIndexOf("data:image/", 0) is 0
           sprite
         else
+          # TODO remove this hardcoded projectId used for testing
+          projectId = 2176
+
           "/production/projects/#{projectId}/images/#{sprite}.png"
       else
         #TODO Use width, height and color
