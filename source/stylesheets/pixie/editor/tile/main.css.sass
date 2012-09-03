@@ -7,6 +7,7 @@ $right_sidebar_width: 220px
 $top_bar_height: 21px
 $bottom_bar_height: 0px
 $module_margin: 12px
+$toolbar_height: 250px
 
 // this is used to prevent the bug where you can't scroll
 // to the top when the editor gets too tall or the screen
@@ -53,7 +54,7 @@ $module_margin: 12px
       &.left
         +border-left-radius(0)
 
-        height: 220px
+        height: $toolbar_height
         top: 0
         bottom: 0
         margin: auto
@@ -224,6 +225,8 @@ $module_margin: 12px
     +tile_tool(selection)
     +tile_tool(stamp)
     +tile_tool(pointer)
+
+    padding-left: 0
 
     .tool
       +bounds(32px)
