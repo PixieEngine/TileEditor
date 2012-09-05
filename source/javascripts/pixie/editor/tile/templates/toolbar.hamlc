@@ -1,5 +1,10 @@
-%li.tool(data-tool="stamp")
-%li.tool(data-tool="eraser")
-%li.tool(data-tool="fill")
-%li.tool(data-tool="selection")
-%li.tool(data-tool="pointer")
+-tool = (name, hotkey) ->
+  %li.tool(data-tool="#{name}")
+    -if hotkey
+      %span.hotkey= hotkey
+
+= tool('stamp', 'b')
+= tool('eraser', 'e')
+= tool('fill', 'f')
+= tool('selection', 's')
+= tool('pointer', 'p')
