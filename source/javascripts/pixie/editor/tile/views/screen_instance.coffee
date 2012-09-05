@@ -13,7 +13,22 @@ namespace "Pixie.Editor.Tile.Views", (Views) ->
         class: "propsIcon"
         src: '/images/pixie/editor/tile/table.png'
 
+      colorLabel = $ "<div>"
+        class: 'color_label'
+
+      colorLabel.css
+        backgroundColor: @model.get('color')
+
+      @el.append colorLabel
+
       @el.attr "data-cid", @model.cid
+
+      {width, height} = @model.get('sourceEntity').attributes
+
+      @el.css
+        width: width
+        height: height
+
       @model.bind 'change', @render
 
       @render()

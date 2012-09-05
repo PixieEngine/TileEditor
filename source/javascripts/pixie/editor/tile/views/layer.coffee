@@ -15,7 +15,11 @@ namespace "Pixie.Editor.Tile.Views", (Views) ->
       @render()
 
     render: =>
-      @el.html "<div class='name'>#{@model.get 'name'}</div> <eye />"
+      color = @model.get('color')
+      backgroundColor = "background-color:#{color}"
+      colorLabel = "<span class='color_label' style=#{backgroundColor}></span>"
+
+      @el.html "#{colorLabel}<div class='name'>#{@model.get 'name'}</div> <eye />"
 
       if @model == @options.settings.get "activeLayer"
         @el.addClass "active"

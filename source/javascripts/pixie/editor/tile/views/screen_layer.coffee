@@ -1,6 +1,4 @@
 namespace "Pixie.Editor.Tile.Views", (Views) ->
-  Models = Pixie.Editor.Tile.Models
-
   class Views.ScreenLayer extends Pixie.View
     className: "layer"
 
@@ -12,16 +10,16 @@ namespace "Pixie.Editor.Tile.Views", (Views) ->
       @el.attr "data-cid", @model.cid
 
       @model.bind 'change', @render
-      
+
       @objectInstances = @model.objectInstances
       @objectInstances.bind "add", @instanceAdded
       @objectInstances.bind "remove", @instanceRemoved
       @objectInstances.bind "reset", @resetInstances
-      
+
       @resetInstances()
 
       @render()
-      
+
     instanceAdded: (instance) =>
       screenInstance = new Views.ScreenInstance
         model: instance

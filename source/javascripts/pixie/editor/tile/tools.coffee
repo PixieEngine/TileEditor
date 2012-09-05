@@ -11,6 +11,7 @@ namespace "Pixie.Editor.Tile", (Tile) ->
       enter: ({x, y, layer, entity, execute}) ->
         if layer and entity
           instance = new Models.Instance
+            color: layer.get('color')
             x: x
             y: y
             sourceEntity: entity
@@ -79,6 +80,7 @@ namespace "Pixie.Editor.Tile", (Tile) ->
               layer: layer
 
           instance = new Models.Instance
+            color: layer.get('color')
             x: x
             y: y
             sourceEntity: entity

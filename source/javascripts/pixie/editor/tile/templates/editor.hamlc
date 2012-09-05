@@ -5,9 +5,9 @@
     .component(style='display: none')
       %h3 Instance Properties
       %table.prop_editor
-      .button_group
-        %button.prop_save Save
-        %button.prop_cancel Cancel
+      .btn-group
+        %button.btn.prop_save Save
+        %button.btn.prop_cancel Cancel
       %hr
 
   .module.left

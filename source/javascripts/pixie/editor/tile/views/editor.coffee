@@ -223,6 +223,7 @@ namespace "Pixie.Editor.Tile.Views", (Views) ->
         if layerData.instances
           layerData.instances.each (instanceData) =>
             instance = new Models.Instance
+              color: layer.get('color')
               x: instanceData.x
               y: instanceData.y
               sourceEntity: entityLookup[instanceData.uuid]
@@ -235,6 +236,7 @@ namespace "Pixie.Editor.Tile.Views", (Views) ->
             row.each (index, x) ->
               if sourceEntity = data.tileset[index]
                 instance = new Models.Instance
+                  color: layer.get('color')
                   x: x * tileWidth
                   y: y * tileHeight
                   sourceEntity: entityLookup[sourceEntity.uuid]

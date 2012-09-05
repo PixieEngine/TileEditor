@@ -50,11 +50,9 @@ namespace "Pixie.Editor.Tile.Views", (Views) ->
         @appendLayer layer
 
     addLayer: ->
-      layer = new Models.Layer
-
       newIndex = @collection.length + 1
 
-      layer.set
+      layer = new Models.Layer
         name: "Layer #{newIndex}"
         zIndex: newIndex
 

@@ -144,16 +144,23 @@ $toolbar_height: 100%
   .layer_selection ul.layers
     +inline-block
 
+    margin: 0
     width: 100%
 
     input
       +user-select(text)
 
     .layer
-      +bounds(100%, 24px)
+      +bounds(100%, 26px)
 
       +inline-block
       cursor: pointer
+
+      .color_label
+        display: inline-block
+        height: 100%
+        width: 3px
+        float: left
 
       .name
         +inline-block
@@ -300,11 +307,20 @@ $toolbar_height: 100%
       border-color: blue
 
   .instance
+    .color_label
+      +box-sizing(border-box)
+
+      position: absolute
+      top: 1px
+      left: 1px
+      width: 3px
+      height: 100%
+
     .propsIcon
       display: none
       position: absolute
-      top: 0
-      right: 0
+      top: -1px
+      right: -3px
 
     &.props
       .propsIcon
