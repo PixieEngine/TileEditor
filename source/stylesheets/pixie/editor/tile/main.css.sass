@@ -2,12 +2,12 @@
 
 @import pixie/editor_base.sass
 
-$left_sidebar_width: 60px
+$left_sidebar_width: 50px
 $right_sidebar_width: 220px
 $top_bar_height: 21px
 $bottom_bar_height: 0px
 $module_margin: 12px
-$toolbar_height: 250px
+$toolbar_height: 100%
 
 // this is used to prevent the bug where you can't scroll
 // to the top when the editor gets too tall or the screen
@@ -41,7 +41,7 @@ $toolbar_height: 250px
     padding-top: $top_bar_height + $module_margin
 
     &>.module
-      padding: 10px
+      padding: 5px
 
       &.left, &.right
         background-color: rgba(0, 0, 0, 0.4)
@@ -65,7 +65,7 @@ $toolbar_height: 250px
         width: $right_sidebar_width
 
     .actions.top
-      left: 10px
+      left: 70px
       position: absolute
       top: 10px
 
@@ -220,12 +220,13 @@ $toolbar_height: 250px
           display: block
 
   .tools
-    +bounds($left_sidebar_width, auto)
     +tile_tool(eraser)
     +tile_tool(fill)
     +tile_tool(selection)
     +tile_tool(stamp)
     +tile_tool(pointer)
+
+    margin: 0
 
     .tool
       +bounds(32px)
@@ -237,7 +238,13 @@ $toolbar_height: 250px
       cursor: pointer
       margin: 1px
       padding: 2px
+      position: relative
 
+      .hotkey
+        font-size: 11px
+        position: absolute
+        top: -3px
+        left: 2px
 
       &.primary, &.active
         +border-radius(3px)

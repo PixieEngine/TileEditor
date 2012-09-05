@@ -53,8 +53,7 @@ namespace "Pixie.Editor.Tile.Views", (Views) ->
 
       @$(".canvas ul.layers").empty()
 
-      @collection.each (layer) =>
-        @appendLayer layer
+      @collection.each @appendLayer
 
     appendLayer: (layer) =>
       unless layerView = @_layerViews[layer.cid]

@@ -1,6 +1,4 @@
 namespace "Pixie.Editor.Tile.Views", (Views) ->
-  Models = Pixie.Editor.Tile.Models
-
   class Views.Entity extends Pixie.View
     tagName: 'img'
     className: 'entity'
@@ -9,8 +7,9 @@ namespace "Pixie.Editor.Tile.Views", (Views) ->
       super
 
       # Add cid
-      @el.attr "data-cid", @model.cid
-      @el.attr "data-uuid", @model.get("uuid")
+      @el.attr
+        "data-cid": @model.cid
+        "data-uuid": @model.get("uuid")
 
       @model.bind 'change:sprite', @render
 

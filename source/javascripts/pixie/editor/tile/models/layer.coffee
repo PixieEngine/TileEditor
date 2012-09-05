@@ -1,5 +1,4 @@
 namespace "Pixie.Editor.Tile.Models", (Models) ->
-
   class Models.Layer extends Backbone.Model
     defaults:
       name: "Layer"
@@ -15,7 +14,7 @@ namespace "Pixie.Editor.Tile.Models", (Models) ->
 
       key = "#{instance.get 'x'}x#{instance.get 'y'}"
       @instanceCache[key] = instance
-      
+
     instanceAt: (x, y) ->
       key = "#{x}x#{y}"
 
