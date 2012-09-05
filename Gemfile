@@ -1,5 +1,7 @@
 source :rubygems
 
+gem "editor_base"
+
 gem "backbone-source"
 gem 'coffee-filter'
 gem 'cornerstone-source'
