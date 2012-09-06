@@ -168,8 +168,8 @@ $toolbar_height: 100%
 
     .layer
       +bounds(100%, 26px)
-
       +inline-block
+
       cursor: pointer
 
       .color_label
@@ -294,6 +294,9 @@ $toolbar_height: 100%
       left: 0
       position: absolute
       top: 0
+
+      +transition-property(opacity)
+      +transition-duration(.250s)
 
       .instance
         position: absolute

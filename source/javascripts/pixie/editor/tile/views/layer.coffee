@@ -1,6 +1,4 @@
 namespace "Pixie.Editor.Tile.Views", (Views) ->
-  Models = Pixie.Editor.Tile.Models
-
   class Views.Layer extends Pixie.View
     tagName: 'li'
     className: 'layer'
@@ -39,7 +37,7 @@ namespace "Pixie.Editor.Tile.Views", (Views) ->
 
     toggleVisible: ->
       @model.set
-        visible: not @model.get 'visible'
+        visible: !@model.get 'visible'
 
     events:
       click: "activate"
