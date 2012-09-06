@@ -47,17 +47,17 @@ namespace "Pixie.Editor.Tile.Views", (Views) ->
         settings: @settings
       @$(".content").prepend @screen.el
 
-      layerSelection = new Views.LayerSelection
-        collection: @layerList
-        editor: this
-        settings: @settings
-      @$(".module.right").append layerSelection.el
-
       entitySelection = new Views.EntitySelection
         collection: @entityList
         editor: this
         settings: @settings
-      @$(".module.right").append entitySelection.el
+      @$(".module.right").prepend entitySelection.el
+
+      layerSelection = new Views.LayerSelection
+        collection: @layerList
+        editor: this
+        settings: @settings
+      @$(".module.right").prepend layerSelection.el
 
       toolbar = new Views.Toolbar
         editor: this
