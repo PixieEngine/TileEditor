@@ -17,20 +17,22 @@ namespace "Pixie.Editor.Tile.Views", (Views) ->
       backgroundColor = "background-color:#{color}"
       colorLabel = "<span class='color_label' style=#{backgroundColor}></span>"
 
-      @el.html "#{colorLabel}<div class='name'>#{@model.get 'name'}</div> <eye />"
+      @el.html "#{colorLabel}<div class='name'>#{@model.get 'name'}</div> <i class='eye icon-eye-open'></i>"
 
       if @model == @options.settings.get "activeLayer"
         @el.addClass "active"
 
       if @model.get 'visible'
-        @el.fadeTo 'fast', 1
+        @el.css
+          opacity: 1
       else
-        @el.fadeTo 'fast', 0.5
+        @el.css
+          opacity: 0.5
 
       return this
 
     activate: (e) ->
-      return if $(e.target).is('eye')
+      return if $(e.target).is('.eye')
 
       @options.settings.set
         activeLayer: @model
@@ -41,4 +43,4 @@ namespace "Pixie.Editor.Tile.Views", (Views) ->
 
     events:
       click: "activate"
-      "click eye": "toggleVisible"
+      "click .eye": "toggleVisible"

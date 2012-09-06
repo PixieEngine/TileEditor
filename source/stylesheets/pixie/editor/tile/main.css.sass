@@ -169,6 +169,8 @@ $toolbar_height: 100%
     .layer
       +bounds(100%, 26px)
       +inline-block
+      +transition-property(opacity)
+      +transition-duration(.250s)
 
       cursor: pointer
 
@@ -192,18 +194,17 @@ $toolbar_height: 100%
         background-color: rgba(0, 0, 0, 0.3)
         font-weight: bold
 
-      eye
+      .eye
         display: none
 
       &:hover
-        eye
+        .eye
+          +bounds(14px)
           +inline-block
 
-          background-image: url(/images/pixie/editor/tile/tools/show.png)
           cursor: pointer
           float: right
-          height: 16px
-          width: 16px
+          vertical-align: middle
 
   .component
     +box-sizing(border-box)
