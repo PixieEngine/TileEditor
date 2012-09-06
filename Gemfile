@@ -1,6 +1,6 @@
 source :rubygems
 
-gem "editor_base"
+gem "editor_base", :git => "git://github.com/PixieEngine/EditorBase"
 
 gem "backbone-source"
 gem 'coffee-filter'
