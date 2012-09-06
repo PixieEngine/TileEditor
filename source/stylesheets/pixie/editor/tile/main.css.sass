@@ -60,7 +60,7 @@ $toolbar_height: 100%
       padding: 5px
 
       &.left, &.right
-        background-color: rgba(0, 0, 0, 0.4)
+        background-color: rgba(0, 0, 0, 0.3)
         border: none
         height: 100%
 
@@ -254,16 +254,20 @@ $toolbar_height: 100%
     margin: 0
 
     .tool
-      +bounds(32px)
+      +border-radius(3px)
+      +bounds(40px)
+      +box-shadow(rgba(255, 255, 255, 0.5) 0 1px 0 inset)
+      +box-sizing(border-box)
       +inline-block
 
       background-repeat: no-repeat
       background-position: 2px
-      border: 1px solid transparent
+      border: 1px solid rgba(0, 0, 0, 0.2)
       cursor: pointer
-      margin: 1px
-      padding: 2px
+      margin: 5px auto 0
+      padding-top: 12px
       position: relative
+      text-align: center
 
       .hotkey
         font-size: 11px
@@ -271,13 +275,16 @@ $toolbar_height: 100%
         top: -3px
         left: 2px
 
-      &.primary, &.active
+      &:hover
+        background-color: rgba(255, 255, 255, 0.1)
+
+      &.active
         +border-radius(3px)
-        +box-shadow(rgba(0, 0, 0, 0.5) 0 0 4px inset)
+        +box-shadow(rgba(0, 0, 0, 0.5) 0 0 3px inset)
 
         background-color: rgba(255, 255, 255, 0.3)
         background-position: 2px
-        border: 1px solid rgba(0, 0, 0, 0.6)
+        border: 1px solid rgba(0, 0, 0, 0.4)
 
       &.secondary
         border-color: blue
