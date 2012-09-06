@@ -26,10 +26,22 @@ $toolbar_height: 100%
   padding: 0
   position: relative
 
+  // oh twitter bootstrap, i for icon...
+  i
+    cursor: pointer
+
+    &:active
+      +opacity(0.8)
+
+  ul
+    margin: 0
+
   hr
     +box-shadow(rgba(0, 0, 0, 0.2) 0 1px inset)
 
     border-top: 1px solid rgba(255, 255, 255, 0.4)
+    margin: 0.5em 0
+    padding: 0
 
   .tile_actions
     .btn
@@ -48,7 +60,7 @@ $toolbar_height: 100%
       padding: 5px
 
       &.left, &.right
-        background-color: rgba(0, 0, 0, 0.4)
+        background-color: rgba(0, 0, 0, 0.3)
         border: none
         height: 100%
 
@@ -156,8 +168,10 @@ $toolbar_height: 100%
 
     .layer
       +bounds(100%, 26px)
-
       +inline-block
+      +transition-property(opacity)
+      +transition-duration(.250s)
+
       cursor: pointer
 
       .color_label
@@ -177,20 +191,20 @@ $toolbar_height: 100%
         padding: 2px
 
       &.active
+        background-color: rgba(0, 0, 0, 0.3)
         font-weight: bold
 
-      eye
+      .eye
         display: none
 
       &:hover
-        eye
+        .eye
+          +bounds(14px)
           +inline-block
 
-          background-image: url(/images/pixie/editor/tile/tools/show.png)
           cursor: pointer
           float: right
-          height: 16px
-          width: 16px
+          vertical-align: middle
 
   .component
     +box-sizing(border-box)
@@ -240,16 +254,20 @@ $toolbar_height: 100%
     margin: 0
 
     .tool
-      +bounds(32px)
+      +border-radius(3px)
+      +bounds(40px)
+      +box-shadow(rgba(255, 255, 255, 0.5) 0 1px 0 inset)
+      +box-sizing(border-box)
       +inline-block
 
       background-repeat: no-repeat
       background-position: 2px
-      border: 1px solid transparent
+      border: 1px solid rgba(0, 0, 0, 0.2)
       cursor: pointer
-      margin: 1px
-      padding: 2px
+      margin: 5px auto 0
+      padding-top: 12px
       position: relative
+      text-align: center
 
       .hotkey
         font-size: 11px
@@ -257,13 +275,16 @@ $toolbar_height: 100%
         top: -3px
         left: 2px
 
-      &.primary, &.active
+      &:hover
+        background-color: rgba(255, 255, 255, 0.1)
+
+      &.active
         +border-radius(3px)
-        +box-shadow(rgba(0, 0, 0, 0.5) 0 0 4px inset)
+        +box-shadow(rgba(0, 0, 0, 0.5) 0 0 3px inset)
 
         background-color: rgba(255, 255, 255, 0.3)
         background-position: 2px
-        border: 1px solid rgba(0, 0, 0, 0.6)
+        border: 1px solid rgba(0, 0, 0, 0.4)
 
       &.secondary
         border-color: blue
@@ -281,6 +302,9 @@ $toolbar_height: 100%
       left: 0
       position: absolute
       top: 0
+
+      +transition-property(opacity)
+      +transition-duration(.250s)
 
       .instance
         position: absolute

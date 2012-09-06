@@ -58,6 +58,10 @@ namespace "Pixie.Editor.Tile.Views", (Views) ->
 
       @collection.add layer
 
+    removeLayer: ->
+      if confirm 'Clicking OK will delete the layer and all entities on it'
+        ;
+
     appendLayer: (layer) =>
       unless layerView = @_layerViews[layer.cid]
         layerView = @_layerViews[layer.cid] = new Views.Layer
@@ -67,4 +71,5 @@ namespace "Pixie.Editor.Tile.Views", (Views) ->
       @$('ul').append layerView.render().el
 
     events:
-      'click button.new': 'addLayer'
+      'click .add': 'addLayer'
+      'click .remove': 'removeLayer'

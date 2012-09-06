@@ -40,8 +40,10 @@ namespace "Pixie.Editor.Tile.Views", (Views) ->
         zIndex: @model.get "zIndex"
 
       if @model.get 'visible'
-        @el.fadeTo 'fast', 1
+        @el.css
+          opacity: 1
       else
-        @el.fadeTo 'fast', 0
+        @el.css
+          opacity: 0
 
       return this
