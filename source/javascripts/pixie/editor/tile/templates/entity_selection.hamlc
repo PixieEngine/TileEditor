@@ -1,8 +1,4 @@
-%h3
-  Entities
-.tile_actions.btn-group
-  %button.btn.new
-    New
-  %button.btn.remove
-    Delete
+%h3 Entities
+%i.add.icon-plus-sign
+%i.remove.icon-minus-sign
 .entities

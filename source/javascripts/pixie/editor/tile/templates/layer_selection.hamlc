@@ -1,4 +1,5 @@
 %h3 Layers
-%button.btn.new New Layer
+%i.add.icon-plus-sign
+%i.remove.icon-minus-sign
 %ul.layers
 %hr

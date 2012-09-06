@@ -26,10 +26,19 @@ $toolbar_height: 100%
   padding: 0
   position: relative
 
+  // oh twitter bootstrap, i for icon...
+  i
+    cursor: pointer
+
+    &:active
+      +opacity(0.8)
+
   hr
     +box-shadow(rgba(0, 0, 0, 0.2) 0 1px inset)
 
     border-top: 1px solid rgba(255, 255, 255, 0.4)
+    margin: 0.5em 0
+    padding: 0
 
   .tile_actions
     .btn
@@ -177,6 +186,7 @@ $toolbar_height: 100%
         padding: 2px
 
       &.active
+        background-color: rgba(0, 0, 0, 0.3)
         font-weight: bold
 
       eye
