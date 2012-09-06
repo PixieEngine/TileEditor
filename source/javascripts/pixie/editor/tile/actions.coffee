@@ -3,11 +3,14 @@ namespace "Pixie.Editor.Tile", (Tile) ->
   Tile.actions =
     undo:
       hotkeys: "ctrl+z"
+      primary: true
+      group: 'undo'
       perform: (editor) ->
         editor.undo()
 
     redo:
       hotkeys: "ctrl+y"
+      group: 'undo'
       perform: (editor) ->
         editor.redo()
 

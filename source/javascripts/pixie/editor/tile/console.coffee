@@ -1,5 +1,5 @@
-#= require pixie/console
-#= require pixie/window
+# require pixie/console
+# require pixie/window
 
 namespace "Pixie.Editor.Tile", (Tile) ->
 
