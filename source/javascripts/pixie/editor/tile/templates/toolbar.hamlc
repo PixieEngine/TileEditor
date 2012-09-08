@@ -6,5 +6,5 @@
 = tool('stamp', 'b')
 = tool('eraser', 'e')
 = tool('fill', 'f')
-= tool('selection', 's')
-= tool('pointer', 'p')
+= tool('selection', 'm')
+= tool('pointer', 'v')
