@@ -47,6 +47,10 @@
 #   end
 # end
 
+require 'haml_coffee_assets'
+
+HamlCoffeeAssets.config.extendScope = true
+
 set :css_dir, 'stylesheets'
 
 set :js_dir, 'javascripts'
