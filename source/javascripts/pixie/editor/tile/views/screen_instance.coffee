@@ -13,23 +13,13 @@ namespace "Pixie.Editor.Tile.Views", (Views) ->
         class: "propsIcon"
         src: '/images/pixie/editor/tile/table.png'
 
-      properties = $ "<div>"
-        class: 'properties_display'
-
-      for key, value of @model.get('properties')
-        properties.append $ "<p class='property'><span class='key'>#{key}</span>: <span class='value'>#{value}</span></p>"
-
-      # sort properties so they match the properties editor
-      if _.keys(@model.get('properties')).length
-        @el.attr
-          "data-original-title": properties.get(0).outerHTML
-          "rel": "tooltip"
-
       colorLabel = $ "<div>"
         class: 'color_label'
 
       colorLabel.css
         backgroundColor: @model.get('color')
+
+      @updateTooltip()
 
       @el.append colorLabel
 
@@ -42,8 +32,22 @@ namespace "Pixie.Editor.Tile.Views", (Views) ->
         height: height
 
       @model.bind 'change', @render
+      @model.bind 'change:properties', @updateTooltip
 
       @render()
+
+    updateTooltip: =>
+      properties = $ "<div>"
+        class: 'properties_display'
+
+      for key, value of @model.get('properties')
+        properties.append $ "<p class='property'><span class='key'>#{key}</span>: <span class='value'>#{value}</span></p>"
+
+      # sort properties so they match the properties editor
+      if _.keys(@model.get('properties')).length
+        @el.attr
+          "data-original-title": properties.get(0).outerHTML
+          "rel": "tooltip"
 
       # TODO move this up to a higher level
       # and only init the tooltips once all the
