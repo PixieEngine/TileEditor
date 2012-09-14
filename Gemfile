@@ -1,9 +1,16 @@
 source :rubygems
 
-gemspec
-
 gem "editor_base", :git => "git://github.com/PixieEngine/EditorBase"
 gem "pixie_sass", :git => "git://github.com/PixieEngine/pixie_sass"
+
+gem "middleman", "~>3.0.0"
+gem "backbone-source"
+gem 'coffee-filter'
+gem 'cornerstone-source'
+gem "haml_coffee_assets"
+gem 'jquery-source'
+gem 'oj'
+gem "underscore-source"
 
 group :test, :development do
   gem 'jasmine'
