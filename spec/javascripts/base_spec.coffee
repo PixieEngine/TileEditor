@@ -9,7 +9,7 @@ describe "Pixie.Editor.Base", ->
 
   describe "actions", ->
     it "should be able to be created", ->
-      button = @view._constructAction
+      button = @view.constructButton
         name: 'save'
 
       expect(button).toHaveClass('btn')
@@ -19,7 +19,7 @@ describe "Pixie.Editor.Base", ->
     it "should bind hotkeys", ->
       hotkeySpy = sinon.spy(@view, 'addHotkey')
 
-      button = @view._constructAction
+      button = @view.constructButton
         name: 'delete'
         hotkeys: ['d', 'shift+d']
 
@@ -28,14 +28,14 @@ describe "Pixie.Editor.Base", ->
       expect(hotkeySpy).toHaveBeenCalledTwice()
 
     it "should not create a button for items not in the menu", ->
-      button = @view._constructAction
+      button = @view.constructButton
         name: 'edit'
         menu: false
 
       expect(button).not.toBeDefined()
 
     it "should support adding icons", ->
-      button = @view._constructAction
+      button = @view.constructButton
         name: 'hide'
         icon: 'eye'
 

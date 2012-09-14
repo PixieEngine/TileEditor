@@ -44,7 +44,7 @@ namespace "Pixie.Editor", (Editor) ->
 
       buttonGroup
 
-    constructAction: (action) ->
+    constructButton: (action) ->
       name = action.name
       titleText = name.capitalize()
       undoable = action.undoable
@@ -72,7 +72,7 @@ namespace "Pixie.Editor", (Editor) ->
         actionButton
 
     addAction: (action) ->
-      actionButton = self.constructAction(action)
+      actionButton = self.constructButton(action)
 
       if action.menu != false
         if group = action.group
