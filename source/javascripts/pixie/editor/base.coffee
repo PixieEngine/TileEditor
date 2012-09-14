@@ -22,7 +22,29 @@ namespace "Pixie.Editor", (Editor) ->
           # that bubbling will work as expected.
           return false
 
-    _constructAction: (action) ->
+    constructGroup: (groupName, action, actionButton) ->
+      unless (buttonGroup = @$(".content .actions.top [data-group='#{groupName}']")).length
+        buttonGroup = $(JST['pixie/editor/tile/templates/button_group']({group: groupName}))
+
+      if action.primary
+        buttonGroup.find('.dropdown-toggle').before actionButton
+
+      listItem = $ "<li>"
+      anchor = $ "<a>"
+        href: '#'
+        html: "#{action.name.capitalize()}<span class='hotkey'>#{action.hotkeys.first()}</span>"
+      .on 'mousedown touchstart', ->
+        action.perform(self)
+
+        return false
+
+      listItem.append(anchor)
+
+      buttonGroup.find('.dropdown-menu').append listItem
+
+      buttonGroup
+
+    constructAction: (action) ->
       name = action.name
       titleText = name.capitalize()
       undoable = action.undoable
@@ -45,33 +67,18 @@ namespace "Pixie.Editor", (Editor) ->
           return false
 
         if action.icon
-          actionButton.append("<span class='icon static-#{action.icon}'></span>")
+          actionButton.append "<span class='icon static-#{action.icon}'></span>"
 
         actionButton
 
-    # TODO support adding button groups
     addAction: (action) ->
-      actionButton = self._constructAction(action)
-
-        # if action.group
-        #   if (buttonGroup = @$(".content .actions.top [group=#{action.group}]")).length
-        #     if action.primary
-        #       $(buttonGroup).find('.dropdown-toggle').before actionButton
-
-        #     $(buttonGroup).find('.dropdown-menu').append "<li>#{name.capitalize()}</li>"
-        #   else
-        #     buttonGroup = JST['pixie/editor/tile/templates/button_group']({group: action.group})
-
-        #     if action.primary
-        #       $(buttonGroup).find('.dropdown-toggle').before actionButton
-
-        #     $(buttonGroup).find('.dropdown-menu').append "<li>#{name.capitalize()}</li>"
-
-        #     @$('.content. actions.top').append buttonGroup
-
+      actionButton = self.constructAction(action)
 
       if action.menu != false
-        actionButton.appendTo(@$(".content .actions.top"))
+        if group = action.group
+          self.constructGroup(group, action, actionButton).appendTo(@$(".content .actions.top"))
+        else
+          actionButton.appendTo(@$(".content .actions.top"))
 
     takeFocus: ->
       window.currentComponent = self
