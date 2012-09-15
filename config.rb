@@ -51,6 +51,9 @@ require 'haml_coffee_assets'
 
 HamlCoffeeAssets.config.extendScope = true
 
+set :source, "lib/assets"
+set :source_dir, "#{File.dirname(__FILE__)}/#{source}"
+
 set :css_dir, 'stylesheets'
 
 set :js_dir, 'javascripts'
