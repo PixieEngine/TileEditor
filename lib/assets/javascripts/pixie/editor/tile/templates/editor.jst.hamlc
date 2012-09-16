@@ -1,0 +1,15 @@
+.content
+  .actions.top
+
+  .module.right
+    .component(style='display: none')
+      %hr
+      %h3
+        %img.entity_image
+        Properties
+      %table.prop_editor
+      .btn-group
+        %button.btn.prop_save Save
+        %button.btn.prop_cancel Cancel
+
+  .module.left

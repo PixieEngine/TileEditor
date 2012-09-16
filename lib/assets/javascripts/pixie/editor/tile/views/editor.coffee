@@ -138,6 +138,9 @@ namespace "Pixie.Editor.Tile.Views", (Views) ->
 
         @propEditor.setProps(props)
         @propEditor.parent().show()
+
+        @$('.entity_image').attr 'src', instance.get('src')
+
         @propEditor.find('input.key').focus()
 
     saveInstanceProperties: =>
