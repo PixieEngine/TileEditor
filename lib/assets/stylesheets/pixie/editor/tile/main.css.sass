@@ -41,6 +41,10 @@ $toolbar_height: 100%
   i
     cursor: pointer
 
+    &.add, &.remove
+      margin-right: 6px
+      margin-top: 4px
+
     &:active
       +opacity(0.8)
 
@@ -48,8 +52,8 @@ $toolbar_height: 100%
     margin: 0
 
   hr
-    +box-shadow(rgba(0, 0, 0, 0.2) 0 1px inset)
-
+    border: none
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2)
     border-top: 1px solid rgba(255, 255, 255, 0.4)
     margin: 0.5em 0
     padding: 0

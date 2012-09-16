@@ -53,7 +53,7 @@ namespace "Pixie.Editor.Tile.Views", (Views) ->
       @collection.each (layer) =>
         @appendLayer layer
 
-    addLayer: ->
+    addLayer: =>
       newIndex = @collection.length + 1
 
       layer = new Models.Layer
@@ -89,6 +89,9 @@ namespace "Pixie.Editor.Tile.Views", (Views) ->
           settings: @options.settings
 
       @$('ul').append layerView.render().el
+
+      @options.settings.set
+        activeLayer: layer
 
     events:
       'click .add': 'addLayer'
