@@ -10,3 +10,4 @@
 #= require pixie/editor/tile/views/editor
 
 #= require test_config
+#= require bootstrap
