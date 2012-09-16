@@ -158,37 +158,25 @@ $toolbar_height: 100%
         position: absolute
         right: 0
 
-  .module.bottom
-    height: $bottom_bar_height
-    padding-left: $left_sidebar_width
-    padding-right: $right_sidebar_width
-
-    .tiles
-      height: 70px
-      overflow: auto
-
   .layer_selection ul.layers
-    +inline-block
-
-    margin: 0
-    width: 100%
-
     input
       +user-select(text)
 
     .layer
-      +bounds(100%, 26px)
+      +bounds(103%, 26px)
       +inline-block
       +transition-property(opacity)
       +transition-duration(.250s)
 
       cursor: pointer
+      position: relative
 
       .color_label
         display: inline-block
         height: 100%
-        width: 3px
-        float: left
+        width: 5px
+        left: -5px
+        position: absolute
 
       .name
         +inline-block
@@ -206,6 +194,9 @@ $toolbar_height: 100%
 
       .eye
         display: none
+        position: absolute
+        right: 5px
+        top: 5px
 
       &:hover
         .eye

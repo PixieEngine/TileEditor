@@ -26,7 +26,7 @@ namespace "Pixie.Editor.Tile.Views", (Views) ->
       @$("ul").sortable
         axis: "y"
         distance: 10
-        update: (event, ui) =>
+        update: =>
           @reindex()
 
       @options.settings.bind "change:activeLayer", (settings) =>
