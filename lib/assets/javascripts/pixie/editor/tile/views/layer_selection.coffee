@@ -47,6 +47,16 @@ namespace "Pixie.Editor.Tile.Views", (Views) ->
         for name, view of @_layerViews
           view.delegateEvents()
 
+      # this ensures that the tooltips still
+      # show instance properties after sorting
+      # TODO remove gross global selector
+      $('[rel="tooltip"]').tooltip
+        placement: 'right'
+        html: true
+        delay:
+          show: 500
+          hide: 100
+
     render: =>
       @$('ul').empty()
 
