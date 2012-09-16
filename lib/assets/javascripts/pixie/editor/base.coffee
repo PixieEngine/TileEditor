@@ -29,10 +29,16 @@ namespace "Pixie.Editor", (Editor) ->
       if action.primary
         buttonGroup.find('.dropdown-toggle').before actionButton
 
+      # TODO move this into a helper
+      if navigator.appVersion.indexOf("Mac") != -1
+        hotkey = action.hotkeys.first().replace 'ctrl+', '⌘'
+      else
+        hotkey = action.hotkeys.first()
+
       listItem = $ "<li>"
       anchor = $ "<a>"
         href: '#'
-        html: "#{action.name.capitalize()}<span class='hotkey'>#{action.hotkeys.first()}</span>"
+        html: "#{action.name.capitalize()}<span class='hotkey'>#{hotkey}</span>"
       .on 'mousedown touchstart', ->
         action.perform(self)
 
