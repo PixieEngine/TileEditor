@@ -13,8 +13,9 @@ namespace "Pixie.Editor.Tile.Views", (Views) ->
     initialize: ->
       super
 
-      @collection.bind 'add', @appendLayer
-      @collection.bind 'reset', @render
+      @collection.on 'add', @appendLayer
+      @collection.on 'reset', @render
+      @collection.on 'remove', @render
 
       @el.liveEdit ".name",
         change: (element, value) =>
@@ -26,13 +27,7 @@ namespace "Pixie.Editor.Tile.Views", (Views) ->
         axis: "y"
         distance: 10
         update: (event, ui) =>
-          @$("ul li").each (i, li) =>
-            cid = $(li).data("cid")
-            debugger unless cid?
-            @collection.getByCid(cid).set zIndex: i
-
-            for name, view of @_layerViews
-              view.delegateEvents()
+          @reindex()
 
       @options.settings.bind "change:activeLayer", (settings) =>
         if layer = settings.get("activeLayer")
@@ -42,6 +37,15 @@ namespace "Pixie.Editor.Tile.Views", (Views) ->
       @_layerViews = {}
 
       @render()
+
+    reindex: ->
+      @$("ul li").each (i, li) =>
+        cid = $(li).data("cid")
+        debugger unless cid?
+        @collection.getByCid(cid).set zIndex: i
+
+        for name, view of @_layerViews
+          view.delegateEvents()
 
     render: =>
       @$('ul').empty()
@@ -58,9 +62,25 @@ namespace "Pixie.Editor.Tile.Views", (Views) ->
 
       @collection.add layer
 
-    removeLayer: ->
+    removeLayer: (e) =>
       if confirm 'Clicking OK will delete the layer and all entities on it'
-        ;
+        layerElement = @$('.layer.active')
+
+        cid = layerElement.data("cid")
+
+        layer = @collection.getByCid(cid)
+
+        layer.objectInstances.reset()
+
+        layer.destroy()
+
+        # set a new active layer
+        newActive = @collection.at(0)
+
+        @options.settings.set
+          activeLayer: newActive
+
+        @reindex()
 
     appendLayer: (layer) =>
       unless layerView = @_layerViews[layer.cid]

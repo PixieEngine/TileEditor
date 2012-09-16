@@ -8,7 +8,7 @@ namespace "Pixie.Editor.Tile.Views", (Views) ->
 
       @el.attr "data-cid", @model.cid
 
-      @model.bind 'change', @render
+      @model.on 'change', @render
 
       @render()
 

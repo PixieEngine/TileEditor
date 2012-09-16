@@ -31,8 +31,8 @@ namespace "Pixie.Editor.Tile.Views", (Views) ->
         width: width
         height: height
 
-      @model.bind 'change', @render
-      @model.bind 'change:properties', @updateTooltip
+      @model.on 'change', @render
+      @model.on 'change:properties', @updateTooltip
 
       @render()
 
