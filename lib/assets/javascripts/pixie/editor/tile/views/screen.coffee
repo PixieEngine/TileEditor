@@ -85,6 +85,11 @@ namespace "Pixie.Editor.Tile.Views", (Views) ->
     mousemove: (event) =>
       {x, y} = @cursorPosition = @localPosition(event)
 
+      gridX = x / @settings.get "tileWidth"
+      gridY = y / @settings.get 'tileHeight'
+
+      @editor.$('.cursor_position').text "x: #{gridX} y: #{gridY}"
+
       unless _.isEqual(@cursorPosition, @previousCursorPosition)
         @entered(x, y)
 

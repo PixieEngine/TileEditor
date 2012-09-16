@@ -13,3 +13,4 @@
         %button.btn.prop_cancel Cancel
 
   .module.left
+  .cursor_position x: 0 y: 0

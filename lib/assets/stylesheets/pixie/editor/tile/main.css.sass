@@ -26,6 +26,17 @@ $toolbar_height: 100%
   padding: 0
   position: relative
 
+  .cursor_position
+    +border-radius(3px)
+    +box-shadow(rgba(0, 0, 0, 0.15) 0 0 5px inset)
+
+    background-color: #DDD
+    position: absolute
+    bottom: 7px
+    padding: 5px
+    color: #333
+    border: 1px solid rgba(0, 0, 0, 0.2)
+
   // oh twitter bootstrap, i for icon...
   i
     cursor: pointer
@@ -92,19 +103,17 @@ $toolbar_height: 100%
   table.properties
     background-color: transparent
     border-spacing: 0
+    margin-bottom: 1em
+
     tr
       td
         width: 50%
         input
-          width: 96%
-
-  .prop_editor
-    margin-bottom: 1em
+          width: 100%
 
     input
       border: 1px solid #aaa
-      margin-right: -2px
-      padding: 2px
+      height: 25px
 
     tr
       display: block
@@ -137,10 +146,6 @@ $toolbar_height: 100%
   .module.left
     .component
       position: relative
-
-      .entity_image
-        max-height: 32px
-        max-width: 32px
 
       h3
         +inline-block
@@ -214,6 +219,14 @@ $toolbar_height: 100%
   .component
     +box-sizing(border-box)
     width: 100%
+
+    .entity_image
+      max-height: 32px
+      max-width: 32px
+
+    .btn-group
+      .btn
+        width: 50%
 
     h3
       display: inline-block
