@@ -22,11 +22,11 @@ namespace "Pixie.Editor", (Editor) ->
           # that bubbling will work as expected.
           return false
 
-    constructGroup: (groupName, action, actionButton) ->
-      unless (buttonGroup = @$(".content .actions.top [data-group='#{groupName}']")).length
-        buttonGroup = $(JST['pixie/editor/tile/templates/button_group']({group: groupName}))
+    constructGroup: (group, action, actionButton) ->
+      unless (buttonGroup = @$(".content .actions.top [data-group='#{group.name}']")).length
+        buttonGroup = $(JST['pixie/editor/tile/templates/button_group']({group: group.name}))
 
-      if action.primary
+      if group.primaryAction
         buttonGroup.find('.dropdown-toggle').before actionButton
 
       # TODO move this into a helper
