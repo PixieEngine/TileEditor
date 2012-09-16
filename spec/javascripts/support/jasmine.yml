@@ -5,7 +5,6 @@ helpers:
 spec_files:
   - "**/*_spec.*"
 src_dir:
-  - source/javascripts
   - app/assets/javascripts
   - lib/assets/javascripts
   - vendor/assets/javascripts
