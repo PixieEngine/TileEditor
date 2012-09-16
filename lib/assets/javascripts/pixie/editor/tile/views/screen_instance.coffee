@@ -40,11 +40,15 @@ namespace "Pixie.Editor.Tile.Views", (Views) ->
       properties = $ "<div>"
         class: 'properties_display'
 
-      for key, value of @model.get('properties')
+      props = @model.get('properties')
+      keys = _.keys(props)
+
+      for key in keys.sort()
+        value = props[key]
+
         properties.append $ "<p class='property'><span class='key'>#{key}</span>: <span class='value'>#{value}</span></p>"
 
-      # sort properties so they match the properties editor
-      if _.keys(@model.get('properties')).length
+      if keys.length
         @el.attr
           "data-original-title": properties.get(0).outerHTML
           "rel": "tooltip"
@@ -68,5 +72,7 @@ namespace "Pixie.Editor.Tile.Views", (Views) ->
       @el.css
         left: @model.get "x"
         top: @model.get "y"
+
+      @updateTooltip()
 
       return this
