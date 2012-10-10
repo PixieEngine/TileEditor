@@ -1,11 +1,9 @@
-#= require pixie/view
-
 #= require pixie/editor/tile/templates/entity_selection
 
 namespace "Pixie.Editor.Tile.Views", (Views) ->
   Models = Pixie.Editor.Tile.Models
 
-  class Views.EntitySelection extends Pixie.View
+  class Views.EntitySelection extends Views.Base
     className: 'component'
 
     template: "entity_selection"

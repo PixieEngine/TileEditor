@@ -1,5 +1,5 @@
 namespace "Pixie.Editor.Tile.Views", (Views) ->
-  class Views.Layer extends Pixie.View
+  class Views.Layer extends Views.Base
     tagName: 'li'
     className: 'layer'
 

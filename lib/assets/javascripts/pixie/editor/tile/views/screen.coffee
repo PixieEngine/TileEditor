@@ -11,7 +11,7 @@ namespace "Pixie.Editor.Tile.Views", (Views) ->
 
   UI = Pixie.UI
 
-  class Views.Screen extends Pixie.View
+  class Views.Screen extends Views.Base
     className: "screen"
 
     template: "screen"

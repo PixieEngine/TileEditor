@@ -1,5 +1,5 @@
 namespace "Pixie.Editor.Tile.Views", (Views) ->
-  class Views.ScreenLayer extends Pixie.View
+  class Views.ScreenLayer extends Views.Base
     className: "layer"
 
     tagName: "li"

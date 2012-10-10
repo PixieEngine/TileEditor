@@ -5,7 +5,7 @@
 namespace "Pixie.Editor.Tile.Views", (Views) ->
   Models = Pixie.Editor.Tile.Models
 
-  class Views.Toolbar extends Pixie.View
+  class Views.Toolbar extends Views.Base
     className: "tools"
 
     tagName: "ul"

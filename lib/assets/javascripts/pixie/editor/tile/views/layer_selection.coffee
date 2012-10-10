@@ -5,7 +5,7 @@
 namespace "Pixie.Editor.Tile.Views", (Views) ->
   Models = Pixie.Editor.Tile.Models
 
-  class Views.LayerSelection extends Pixie.View
+  class Views.LayerSelection extends Views.Base
     className: 'component layer_selection'
 
     template: "layer_selection"

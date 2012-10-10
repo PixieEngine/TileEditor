@@ -4,10 +4,10 @@
 
 #= require pixie/editor/base
 #= require pixie/editor/undo
-#= require pixie/view
 
+#= require ./base
 #= require_tree ../models
-#= require_tree ../views
+#= require_tree .
 
 #= require ../actions
 #= require ../command
@@ -16,7 +16,7 @@ namespace "Pixie.Editor.Tile.Views", (Views) ->
   {Tile} = Pixie.Editor
   {Command, Models} = Tile
 
-  class Views.Editor extends Pixie.View
+  class Views.Editor extends Views.Base
     className: 'editor tile_editor'
 
     template: "editor"

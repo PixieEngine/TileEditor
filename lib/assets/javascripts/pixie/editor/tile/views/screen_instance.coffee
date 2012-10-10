@@ -1,7 +1,7 @@
 namespace "Pixie.Editor.Tile.Views", (Views) ->
   Models = Pixie.Editor.Tile.Models
 
-  class Views.ScreenInstance extends Pixie.View
+  class Views.ScreenInstance extends Views.Base
     className: "instance"
 
     initialize: ->

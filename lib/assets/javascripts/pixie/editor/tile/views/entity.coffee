@@ -1,5 +1,5 @@
 namespace "Pixie.Editor.Tile.Views", (Views) ->
-  class Views.Entity extends Pixie.View
+  class Views.Entity extends Views.Base
     tagName: 'img'
     className: 'entity'
 
