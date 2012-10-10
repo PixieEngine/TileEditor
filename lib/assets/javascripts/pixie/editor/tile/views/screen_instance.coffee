@@ -9,9 +9,8 @@ namespace "Pixie.Editor.Tile.Views", (Views) ->
 
       @el.append $ "<img>"
 
-      @el.append $ "<img>",
+      @el.append $ "<div>",
         class: "propsIcon"
-        src: '/images/pixie/editor/tile/table.png'
 
       colorLabel = $ "<div>"
         class: 'color_label'
