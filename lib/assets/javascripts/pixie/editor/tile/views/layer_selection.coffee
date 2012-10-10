@@ -1,4 +1,4 @@
-#= require pixie/editor/jquery.live_edit
+#= require jquery.live_edit
 
 #= require pixie/editor/tile/templates/layer_selection
 

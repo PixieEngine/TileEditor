@@ -1,5 +1,4 @@
-#= require pixie/editor/jquery.take_class
-#= require pixie/editor/jquery.property_editor
+#= require jquery.take_class
 
 #= require pixie/editor/tile/templates/toolbar
 

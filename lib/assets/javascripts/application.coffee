@@ -1,5 +1,3 @@
-#= require jquery
-#= require jquery-ui.min
 #= require jquery.hotkeys
 #= require underscore
 #= require backbone

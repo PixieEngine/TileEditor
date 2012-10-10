@@ -1,4 +1,4 @@
-#= require pixie/editor/grid_gen
+#= require pixie/grid_gen
 
 #= require ../command
 #= require ../tools
@@ -38,7 +38,7 @@ namespace "Pixie.Editor.Tile.Views", (Views) ->
       @render()
 
     render: =>
-      grid = GridGen
+      grid = Pixie.GridGen
         width: @settings.get "tileWidth"
         height: @settings.get "tileHeight"
 

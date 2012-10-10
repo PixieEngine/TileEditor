@@ -1,3 +1,5 @@
+#= require jquery.property_editor
+
 #= require pixie/editor/tile/templates/editor
 
 #= require pixie/editor/base
